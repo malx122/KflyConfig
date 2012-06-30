@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AA60B4C-DD43-4060-86E0-FF3DFA582A3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>KFly.Communication</RootNamespace>
+    <AssemblyName>Communication</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="TelemetryLink.cs" />
+    <Compile Include="Commands\Tx\CalibrateRCCenters.cs" />
+    <Compile Include="Commands\Tx\GetChannelMix.cs" />
+    <Compile Include="Commands\Tx\GetRCCalibration.cs" />
+    <Compile Include="Commands\Tx\GetRCValues.cs" />
+    <Compile Include="Commands\Tx\GetRegulatorData.cs" />
+    <Compile Include="Commands\Tx\SetChannelMix.cs" />
+    <Compile Include="Commands\Tx\SetRCCalibration.cs" />
+    <Compile Include="Commands\Tx\SetRegulatorData.cs" />
+    <Compile Include="Commands\Tx\StartRCCalibration.cs" />
+    <Compile Include="Commands\Tx\StopRCCalibration.cs" />
+    <Compile Include="ITelemetrySubscriber.cs" />
+    <Compile Include="Commands\Tx\Ping.cs" />
+    <Compile Include="Commands\Tx\SaveToFlash.cs" />
+    <Compile Include="Commands\Data\MixerData.cs" />
+    <Compile Include="Commands\Data\RegulatorData.cs" />
+    <Compile Include="Commands\KFlyCommand.cs" />
+    <Compile Include="Commands\Data\ChannelData.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Commands\Rx\" />
+    <Folder Include="Commands\Data\" />
+  </ItemGroup>
+</Project>
